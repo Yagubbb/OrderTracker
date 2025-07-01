@@ -1,0 +1,75 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.arachismonitoring'
+    compileSdk 34
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    defaultConfig {
+        applicationId "com.example.arachismonitoring"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storePassword "arachisbakubrand"
+            keyAlias "arachis"
+            keyPassword "arachisbakubrand"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    // Google Play services for authentication
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+
+// Google API client
+    implementation('com.google.api-client:google-api-client-android:2.2.0') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    implementation('com.google.http-client:google-http-client-gson:1.43.2') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    implementation('com.google.apis:google-api-services-sheets:v4-rev20230227-2.0.0') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.swiperefreshlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

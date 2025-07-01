@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Arachis Monitoring</string>
+    <string name="sifaris_tarixi">Order Date</string>
+    <string name="sifaris_ayi">Order Month</string>
+    <string name="ad">Name</string>
+    <string name="soyad">Surname</string>
+    <string name="elaqe_nomresi">Contact Number</string>
+    <string name="mehsul_novu">Product Type</string>
+    <string name="catdirilma">Delivery</string>
+    <string name="packing">Packing</string>
+    <string name="mehsul_sayi">Product Quantity</string>
+    <string name="unvan">Address</string>
+    <string name="saat">Time</string>
+    <string name="sifaris_statusu">Order Status</string>
+    <string name="default_web_client_id">474789645266-buhfnu5dtnvnkls2r0slfig9bgab9u3o.apps.googleusercontent.com</string>
+    <string name="courier">Courier</string>
+    <string name="controller">Controller</string>
+    <string name="order_status_history">Order Status History</string>
+    <string name="order_details">Order Details</string>
+    <string name="note">Note</string>
+    <string name="orders">Orders</string>
+</resources>
